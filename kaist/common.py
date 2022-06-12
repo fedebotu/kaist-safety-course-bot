@@ -6,8 +6,9 @@ from selenium.webdriver.support import expected_conditions as EC
 def check_education_end(driver, video_id=0):
     """Check if the education on the video is over"""
     def _element_available(driver):
-        if driver.find_elements(By.CLASS_NAME, "edu_cate") != []: return True
-        else: False
+        if driver.find_elements(By.CLASS_NAME, "edu_cate") != []: 
+            return True
+        return False
 
     wait = WebDriverWait(driver, timeout=60, poll_frequency=1)
     wait.until(_element_available)
@@ -16,8 +17,7 @@ def check_education_end(driver, video_id=0):
     if els.get_attribute("class") == 'edu_end':
         print(f"Video with ID {video_id} has been completed! :D")
         return True
-    else:
-        False
+    return False
 
 
 def alert_accept(driver, timeout=10):
@@ -31,7 +31,7 @@ def alert_accept(driver, timeout=10):
         alert.accept()
     except Exception:
         pass
-   
+    
 
 def save_debug(driver, filename='debug.html'):
     """Save debug page"""

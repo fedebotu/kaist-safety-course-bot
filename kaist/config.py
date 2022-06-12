@@ -1,12 +1,12 @@
-import os
 import yaml
 from kaist.utils import input_with_default
 
 # - USERNAME: your KAIST id username. This will be used to automatically login
 # - VIDEO_ID: this is the video number that you want to watch, starting from the left of the main page(signed with '정기')
 # - MUTE_VIDEO: if set to True, will mute the videos
-# - DRIVER_PATH: Chromedriver path as above 
-# - TARGET_WEBPAGE: https://safety.kaist.ac.kr/main/main.do . if you change this, you may want to change some other parts of the script
+# - DRIVER_PATH: Chromedriver path as above
+# - TARGET_WEBPAGE: https://safety.kaist.ac.kr/main/main.do .
+#                   if you change this, you may want to change some other parts of the script
 
 
 DEFAULT_CONFIG = {  'username': 'YOUR_USERNAME',
@@ -21,23 +21,23 @@ QUIZ_WARNING = "Answer quiz?\nNOTE: this will try to answer the quiz many times 
 
 def load_config(config_file='config.yaml'):
     """Load configuration file"""
-    try: 
+    try:
         with open(config_file, 'r') as file:
             config = yaml.load(file, Loader=yaml.FullLoader)
             if config == None:
                 config = DEFAULT_CONFIG
-    except:
+    except Exception:
         config = DEFAULT_CONFIG
     return config
 
 
 def dump_config(config, config_file='config.yaml'):
     """Dump configuration file"""
-    try: 
+    try:
         with open(config_file, 'w') as file:
             yaml.dump(config, file, Dumper=yaml.Dumper)
-    except Exception as e:
-        print(f"Could not save configuration file:\n{e}")
+    except Exception as exc:
+        print(f"Could not save configuration file:\n{exc}")
 
 
 def input_config():
@@ -45,10 +45,10 @@ def input_config():
     config = load_config()
     config['username'] = input_with_default("KAIST username: ", config['username'])
     config['video_id'] = int(input_with_default('Video ID: ', config['video_id']))
-    config['answer_quiz'] = input_with_default(QUIZ_WARNING, config['answer_quiz'], yes_no_question=True)
-    use_default_config = input_with_default('Use other default values? ', True, yes_no_question=True)
+    config['answer_quiz'] = input_with_default(QUIZ_WARNING, config['answer_quiz'], True)
+    use_default_config = input_with_default('Use other default values? ', True, True)
     if not use_default_config:
-        config['mute_video'] = input_with_default('Mute video? ', config['mute_video'], yes_no_question=True)
+        config['mute_video'] = input_with_default('Mute video? ', config['mute_video'], True)
         config['driver_path'] = input_with_default('Chrome driver path: ', config['driver_path'])
         config['target_webpage'] = input_with_default('Target webpage: ', config['target_webpage'])
     dump_config(config)
