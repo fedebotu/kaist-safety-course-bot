@@ -85,11 +85,11 @@ jobs:
     - uses: actions/cache@v2
       with:
         path: ${{ env.pythonLocation }}
-        key: ${{ runner.os }}-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt') }}
+        key: ${{ runner.os }}-${{ env.pythonLocation }}-${{ hashFiles('requirements.txt', 'requirements-mac.txt', 'requirements-dev.txt') }}
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip wheel
-        python -m pip install pytest -r requirements.txt
+        python -m pip install pytest -r requirements.txt -r requirements-mac.txt -r requirements-dev.txt
     - name: Make OneFile
       run: |
         pyinstaller --onefile run.py
