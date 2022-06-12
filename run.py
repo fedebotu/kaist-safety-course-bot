@@ -72,7 +72,7 @@ def main():
                 run_quiz(driver)
         
     except Exception as e:
-        print('An exception occurred during the program run:\n {}\nSaving debug.html...'.format(e))
+        print(f'An exception occurred during the program run:\n {e}\nSaving debug.html...')
         save_debug(driver)
 
     input("Done! Press ENTER to exit...")
