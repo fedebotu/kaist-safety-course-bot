@@ -70,7 +70,7 @@ jobs:
 
   MacOS-Build:
     runs-on: macos-latest
-    needs: lint
+#     needs: lint
     strategy:
       fail-fast: false
       matrix:
