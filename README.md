@@ -20,7 +20,7 @@ The default config uses Ubuntu, so you will need to adjust it based on your syst
 First, choose you target courses in the [KAIST Safety Website](https://safety.kaist.ac.kr/main/main.do).
 Then, run in a terminal:
 ```shell
-python run.py
+python kaist-safety-course-bot.py
 ```
 
 The bot will ask for a few configuration inputs:
