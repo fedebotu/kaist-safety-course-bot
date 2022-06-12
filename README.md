@@ -43,7 +43,7 @@ On a serious note, most people just find it annoying having to listen to mandato
 PS: I'm not responsible for inappropriate use of this software of course ;) Feel free to contact me anytime though if you need help or have some feedback
 
 ## Known Issues
-
+When the quiz is passed (>=60 points scored) the bot gets stuck since it cannot find the "NEXT" button. In this case, check if the quiz has been passed and you can stop the script with `Ctrl+C`. This could be fixed by checking the page source for keywords related to the completion.
 
 ## Contribute
 
