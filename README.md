@@ -6,23 +6,29 @@ A bot for automatically completing the KAIST safety course.
 > This bot makes viewing the (quite annoying) lab safety videos automatic, so you don't have to click many times on the videos that you need to see to complete the course. Also, considering that as of the time of writing the quiz can't be failed, the bot can additionally complete it too :D
 
 
-## Setup
+## Usage
+First, choose you target courses in the [KAIST Safety Website](https://safety.kaist.ac.kr/main/main.do). Then:
+
+- For Windows/Mac users:
+
+1. We will be using Chrome and thus the [chromedriver](https://chromedriver.chromium.org/downloads) needs to be installed and moved in the right path (look it up on Google for installation help depending on your system).
+3. From the [Release Page](https://github.com/fedebotu/kaist-safety-course-bot/releases/tag/v0.1.0), download and run files that fit your operating system.
+4. Run the executable file
+5. Modify settings (have a look at the [Configuration Settings](#configuration-settings)). NOTE: you need to modify the `driver_path` with the path where [chromedriver](https://chromedriver.chromium.org/downloads) is saved
+6. Enjoy! 
+
+- For Linux users (or developers):
 We will be using Selenium for automating the webpages. The first step is to install it along with the requirements:
 ```shell
 pip install -r requirements.txt
 ```
+then, run
 
-We will be using Chrome and thus the [`chromedriver`](https://chromedriver.chromium.org/downloads) needs to be installed and moved in the right path (look it up on Google for installation help depending on your system).
-The default config uses Ubuntu, so you will need to adjust it based on your system.
-
-## Usage
-
-First, choose you target courses in the [KAIST Safety Website](https://safety.kaist.ac.kr/main/main.do).
-Then, run in a terminal:
 ```shell
 python kaist-safety-course-bot.py
 ```
 
+## Configuration Settings
 The bot will ask for a few configuration inputs:
 - `answer_quiz`: (default=true): if true, the bot will also answer the quiz for you
 - `driver_path`: (default=/usr/bin/chromedriver) your `chromedriver` path (look at Setup above)
