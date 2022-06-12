@@ -40,6 +40,8 @@ The bot will ask for a few configuration inputs:
 A `config.yaml` file will be saved so that you don't need to re-add these again.
 You should then see some webpages automatically popping up and doing stuff!
 
+## Releases
+- [v0.1.0](https://github.com/fedebotu/kaist-safety-course-bot/releases/tag/v0.1.0): first release
 
 ## Important Note
 The scope of these scripts is NOT to disregard lab safety, which is extremely important for researchers! The purpose is mainly to automate some boring stuff for fun - besides, don't you feel like a chad _cheating the system_?  
