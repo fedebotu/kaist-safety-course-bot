@@ -65,7 +65,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
           name: Windows-Binary
-          path: dist/kaist-safety-course-bot.exe
+          path: kaist-safety-course-bot.exe
 
 
   MacOS-Build:
@@ -118,8 +118,8 @@ jobs:
 
     - name: Rename file name for release
       run: |
-        mv artifacts/kaist-safety-course-bot.exe artifacts/kaist-safety-course-bot.exe
-        mv artifacts/kaist-safety-course-bot.tar artifacts/kaist-safety-course-bot.tar
+        mv artifacts/Windows-Binary/kaist-safety-course-bot.exe artifacts/kaist-safety-course-bot.exe
+        mv artifacts/Mac-Binary/kaist-safety-course-bot.tar artifacts/kaist-safety-course-bot.tar
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
