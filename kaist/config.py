@@ -1,6 +1,7 @@
 import yaml
 from kaist.utils import input_with_default
 
+
 # - USERNAME: your KAIST id username. This will be used to automatically login
 # - VIDEO_ID: this is the video number that you want to watch, starting from the left of the main page(signed with '정기')
 # - MUTE_VIDEO: if set to True, will mute the videos
