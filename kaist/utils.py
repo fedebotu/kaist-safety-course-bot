@@ -46,6 +46,7 @@ class StoppableThread(threading.Thread):
 
 
 class ThreadWithException(threading.Thread):
+    """Thread class throwing an exception when stopped"""
     def __init__(self, name, target, args):
         threading.Thread.__init__(self)
         self.name = name

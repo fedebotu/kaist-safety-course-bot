@@ -2,7 +2,7 @@
 def get_config_from_values(values):
     """Config from PySimpleGUI values"""
     from kaist.config import DEFAULT_CONFIG
-    config = DEFAULT_CONFIG
+    config = DEFAULT_CONFIG.copy()
     for key in config.keys():
         if key == 'driver_path':
             value = values['Browse']

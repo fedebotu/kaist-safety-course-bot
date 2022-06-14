@@ -95,6 +95,8 @@ def main_page():
     thread = None
     while True:
         event, values = window.read()
+        print(DEFAULT_CONFIG)
+
         if event == 'Run':
             config = get_config_from_values(values)
             print("Starting run...")
@@ -115,6 +117,8 @@ def main_page():
             print("Loaded saved configuration")
 
         if event == 'Reload':
+            print(DEFAULT_CONFIG)
+
             window = load_config_to_window(window, values, DEFAULT_CONFIG)
             print("Reloaded default configuration")
 
