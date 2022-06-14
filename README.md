@@ -5,6 +5,9 @@ A bot for automatically completing the KAIST safety course.
 
 > This bot makes viewing the (quite annoying) lab safety videos automatic, so you don't have to click many times on the videos that you need to see to complete the course. Also, considering that as of the time of writing the quiz can't be failed, the bot can additionally complete it too :D
 
+# Notice
+
+> This is an older version with only terminal support
 
 ## Usage
 First, choose you target courses in the [KAIST Safety Website](https://safety.kaist.ac.kr/main/main.do). Then:
