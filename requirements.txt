@@ -1,2 +1,4 @@
 selenium
 pyyaml
+pysimplegui
+tk

@@ -2,14 +2,6 @@ import yaml
 from kaist.utils import input_with_default
 
 
-# - USERNAME: your KAIST id username. This will be used to automatically login
-# - VIDEO_ID: this is the video number that you want to watch, starting from the left of the main page(signed with '정기')
-# - MUTE_VIDEO: if set to True, will mute the videos
-# - DRIVER_PATH: Chromedriver path as above
-# - TARGET_WEBPAGE: https://safety.kaist.ac.kr/main/main.do .
-#                   if you change this, you may want to change some other parts of the script
-
-
 DEFAULT_CONFIG = {  'username': 'YOUR_USERNAME',
                     'video_id': 0,
                     'mute_video': True,
@@ -19,6 +11,7 @@ DEFAULT_CONFIG = {  'username': 'YOUR_USERNAME',
 
 QUIZ_WARNING = "Answer quiz?\nNOTE: this will try to answer the quiz many times iteratively until solved, \
                 we assume to have unlimited retries. Do at your own risk ;D"
+
 
 def load_config(config_file='config.yaml'):
     """Load configuration file"""
@@ -54,3 +47,7 @@ def input_config():
         config['target_webpage'] = input_with_default('Target webpage: ', config['target_webpage'])
     dump_config(config)
     return config
+
+
+
+

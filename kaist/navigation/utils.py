@@ -14,8 +14,10 @@ def check_education_end(driver, video_id=0):
     wait.until(_element_available)
     edu_containers = driver.find_elements(By.CLASS_NAME, "edu_cate")
     els = edu_containers[video_id].find_element(By.XPATH, "../..")
+    lesson_title = edu_containers[video_id].find_element(By.XPATH, "./..").text
+    print(20*'='+f'\nLessons with ID {video_id}:\n {lesson_title}\n'+20*'=')
     if els.get_attribute("class") == 'edu_end':
-        print(f"Video with ID {video_id} has been completed! :D")
+        print(f"Lessons with ID {video_id} have been completed! :D")
         return True
     return False
 
