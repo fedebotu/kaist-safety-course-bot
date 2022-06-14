@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-from kaist.common import alert_accept
+from kaist.navigation.utils import alert_accept
 
 # This dictionary of functions lets you navigate in the menu with Javascript calls
 page_to_functions = {'연구실 안전관리': "5c5a4661-37b3-4632-bbbb-e2413af45ff5",
