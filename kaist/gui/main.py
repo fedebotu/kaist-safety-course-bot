@@ -11,16 +11,20 @@ from kaist.gui.logo import LOGO_B64
 
 DEFAULT_THEME = 'Reddit'
 DEFAULT_FONT = 'Calibri 11'
-APP_VERSION = "0.1.0"
+APP_VERSION = "0.2.0"
 GITHUB_PAGE = "https://github.com/fedebotu/kaist-safety-course-bot"
 ABOUT_TEXT = 'This bot makes viewing the (quite annoying) lab safety videos automatic, so you don`t have to click many times on the videos that you need to see to complete the course. Also, considering that as of the time of writing the quiz can not be failed, the bot can additionally complete it too :D.'
-HELP_TEXT = "We will be using Chrome, so the Chromedriver needs to be downloaded and loaded from the interface.\nMake sure your Chrome version corresponds to the Chromedriver's one!\nYou may also want to check out the following links."
+HELP_TEXT_CHROMEDRIVER = "We will be using Chrome, so the Chromedriver needs to be downloaded and loaded from the interface.\nMake sure your Chrome version corresponds to the Chromedriver's one!"
+HELP_TEXT_VIRUS = "Windows may flag the program as a virus since it contains browser automation.\nBut hey, guess what, it isn`t :)\nTry to temporarily deactivate or make an exception in Windows Defender."
+HELP_TEXT_OTHER = "Did you encounter another bug? Try visiting the Github page or contact us!"
 
 
 def show_about_page(window):
     """Show about page"""
     window.Hide()
-    _layout = [[sg.Text("KAIST Safety Course Bot", font="Calibri 16")],[sg.Text(ABOUT_TEXT,font=DEFAULT_FONT, size=(50, 6))],
+    _layout = [[sg.Text("KAIST Safety Course Bot", font="Calibri 16")],
+    [sg.Column([[sg.Image(data=LOGO_B64, size=(250,250), subsample=(3))]], justification='center')],
+    [sg.Text(ABOUT_TEXT,font=DEFAULT_FONT, size=(50, 6))],
     [sg.Text(f"Application version: {APP_VERSION}",font=DEFAULT_FONT)],
     # [sg.Text("Downloaded from: ",font=DEFAULT_FONT)],
     [sg.Button("Back",font=DEFAULT_FONT),
@@ -41,7 +45,12 @@ def show_about_page(window):
 def show_help_page(window):
     """Show help page"""
     window.Hide()
-    _layout = [[sg.Text(HELP_TEXT,font=DEFAULT_FONT, enable_events=True)],
+    _layout = [[sg.Text('Chromedriver Installation',font='Calibri 16')],
+    [sg.Text(HELP_TEXT_CHROMEDRIVER,font=DEFAULT_FONT, enable_events=True)],
+    [sg.Text('Virus Detection',font='Calibri 16')],
+    [sg.Text(HELP_TEXT_VIRUS,font=DEFAULT_FONT, enable_events=True)],
+    [sg.Text('Other Bugs',font='Calibri 16')],
+    [sg.Text(HELP_TEXT_OTHER,font=DEFAULT_FONT, enable_events=True)],
     [sg.Button("Back",font=DEFAULT_FONT),
     sg.Button("More Help on GitHub",font=DEFAULT_FONT), 
     sg.Button("Download Chromedriver",font=DEFAULT_FONT),
@@ -74,17 +83,17 @@ def main_page():
         [sg.Text('KAIST Username')],
         [sg.InputText(config['username'], key='username', tooltip='Your KAIST username.\nWe will use this to access the webpage')],
         [sg.Text('Video ID')],
-        [sg.InputText(config['video_id'], key='video_id', tooltip='The video number (starting from 0) you want to watchℕnThese videos are marked with `정기`')],
+        [sg.InputText(config['video_id'], key='video_id', tooltip='The video number (starting from 0) you want to watch\nThese videos are marked with `정기`')],
         [sg.Text('Target webpage')],
         [sg.InputText(config['target_webpage'], key='target_webpage', tooltip='Change only if you cannot access the default URL')],
         [sg.CBox('Answer quiz', key='answer_quiz', default=True, tooltip="Answer the quiz automatically.\nIMPORTANT: we assume there is no penalty for failing the test!"), 
             sg.CBox('Mute videos', key='mute_video', default=True, tooltip="Set the volume to 0 while watching the videos")],
         [sg.Text('Driver Path')],
-        [sg.Text('Choose Driver File', size=(15, 1), justification='right'),
+        [sg.Text('Choose File', size=(15, 1), justification='right'),
          sg.InputText(config['driver_path'], key='driver_path'), sg.FileBrowse(tooltip='Your chromedriver path (Windows: chromedriver.exe)\n(go to "Help" section for more info)')],
         [sg.Button('Save Configuration', key='Save'), sg.Button('Load Saved Configuration', key='Load'), sg.Button('Load Default Configuration', key='Reload')],
         [sg.Text('Debug window')],
-        [sg.Multiline("", size=(80, 20), autoscroll=True, reroute_stdout=True, reroute_stderr=True, key='STDOUT', disabled=True)],
+        [sg.Multiline("", size=(75, 20), autoscroll=True, reroute_stdout=True, reroute_stderr=True, key='STDOUT', disabled=True)],
         [sg.Button('Run', tooltip='Run program with current configuration'), sg.Button('Stop', tooltip='Stop current run'), sg.Button('Help'), sg.Button('About'), sg.Button('Exit')],
         # [sg.ProgressBar(max_value=100, key='bsar', metadata=5)],
     ]
