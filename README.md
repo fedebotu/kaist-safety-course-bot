@@ -53,8 +53,8 @@ On a serious note, most people just find it annoying having to listen to mandato
 PS: I'm not responsible for inappropriate use of this software of course ;) Feel free to contact me anytime though if you need help or have some feedback
 
 ## Known Issues
-When the quiz is passed (>=60 points scored) the bot gets stuck since it cannot find the "NEXT" button. In this case, check if the quiz has been passed and you can stop the script with `Ctrl+C`. This could be fixed by checking the page source for keywords related to the completion.
-
+- When the quiz is passed (>=60 points scored) the bot gets stuck since it cannot find the "NEXT" button. In this case, check if the quiz has been passed and you can stop the script with `Ctrl+C`. This could be fixed by checking the page source for keywords related to the completion.
+- Only Easy Authentication works for now (간편 2단계 인증), so you need to set it up first [Setup instructions](https://board.kaist.ac.kr/enboard/iam_notice/11625098246176)
 
 ## Changelog
 - [v0.2.0](https://github.com/fedebotu/kaist-safety-course-bot/releases/tag/v0.2.0): new GUI
@@ -76,6 +76,8 @@ Here are some ideas of things to be done:
 - [x] Add GUI
 - [ ] Automate `chromedriver` installation
 - [ ] Automatic course selection (everything would be automatic this way)
+- [ ] Add other authentication methods if user does not have Easy Auth
+- [ ] Progress bar or better progress print - now each second there is a bit ugly printing
 - [ ] Add tests for Windows version
 - [ ] Add tests for Mac version
 - [ ] Add tests for Linux version
