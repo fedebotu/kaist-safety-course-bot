@@ -1,47 +1,49 @@
-# KAIST Safety Course Bot
+# KAIST 안전교육 이수 봇
 
-A bot for automatically completing the KAIST safety course.
+KAIST 안전교육을 자동으로 이수하게 해주는 봇입니다.
 
-> This bot makes viewing the (quite annoying) lab safety videos automatic, so you don't have to click many times on the videos that you need to see to complete the course. Also, considering that as of the time of writing the quiz can't be failed, the bot can additionally complete it too :D
+> 이 봇은 자동으로 (제법 귀찮은) 연구실 안전교육을 자동으로 이수하게 해주므로, 여러분들은 교육 수료를 위해 몇번이고 비디오를 클릭할 필요가 없습니다. 또한, 퀴즈를 푸는 시간도 버릴 수 없기 때문에 자동적으로 문제도 풀어줍니다 :).
 
-## App Screenshot
+
+## 앱 스크린샷
 
 <p align="center">
   <img src="assets/app-screenshot.png" width = 40% alt="Image">
 </p>
 
-## Usage
-First, choose you target courses in the [KAIST Safety Website](https://safety.kaist.ac.kr/main/main.do). Then:
+## 사용법
+우선, [KAIST 안전교육 사이트](https://safety.kaist.ac.kr/main/main.do)에서 이수하고자 하는 교육을 선택합니다. 각 운영체제별 사용법은 다음과 같습니다 :
 
-- For Windows/Mac users:
+- 윈도우/맥 사용자 : 
+1. 크롬을 사용하기 위해 [크롬 드라이버](https://chromedriver.chromium.org/downloads)를 설치하고 경로에 맞게 옮겨주세요. (구글에서 운영체제에 맞는 설치 도움말을 찾아보세요)
+2. [릴리즈 페이지](https://github.com/fedebotu/kaist-safety-course-bot/releases/tag/v0.2.0)에서 운영체제에 맞는 파일을 다운로드하고 실행하세요.
+3. exe파일을 실행합니다.
+4. 주의 : `driver_path`를 [크롬 드라이버](https://chromedriver.chromium.org/downloads)가 설치된 경로에 맞게 수정해야합니다. ([환경설정]을 확인하세요(#configuration-settings))
+5. 끝났습니다! 
 
-1. We will be using Chrome and thus the [chromedriver](https://chromedriver.chromium.org/downloads) needs to be installed and moved in the right path (look it up on Google for installation help depending on your system).
-3. From the [Release Page](https://github.com/fedebotu/kaist-safety-course-bot/releases/tag/v0.2.0), download and run files that fit your operating system.
-4. Run the executable file
-5. Modify settings (have a look at the [Configuration Settings](#configuration-settings)). NOTE: you need to modify the `driver_path` with the path where [chromedriver](https://chromedriver.chromium.org/downloads) is saved
-6. Enjoy! 
-
-- For Linux users (or developers):
-We will be using Selenium for automating the webpages. The first step is to install it along with the requirements:
+- 리눅스 사용자 (혹은 개발자):
+웹페이지를 자동으로 처리하기 위해서는 Selenium을 이용해야하므로, 다음과 같이 설치를 시작합니다.
 ```shell
 pip install -r requirements.txt
 ```
-then, run
+그리고 다음과 같이 실행합니다.
 
 ```shell
 python kaist-safety-course-bot.py
 ```
 
-## Configuration Settings
+## 환경설정
 The bot will ask for a few configuration inputs:
-- `answer_quiz`: (default=true): if true, the bot will also answer the quiz for you
-- `driver_path`: (default=/usr/bin/chromedriver) your `chromedriver` path (look at Setup above)
-- `mute_video` (default=true) mute video
-- `target_webpage` (default='https://safety.kaist.ac.kr/main/main.do') target page
-- `username` (default='YOUR_USERNAME') your KAIST username
-- `video_id` (default=0) the video you want to watch signed with '정기' starting on the left
+봇은 다음과 같은 몇가지 사용자 입력을 필요로 합니다.
+- `answer_quiz`: (default=true): 만약 true라면 퀴즈를 자동으로 풉니다. 초기 설정값은 true입니다.
+- `driver_path`: (default=/usr/bin/chromedriver) your `chromedriver` path (look at Setup above): 크롬 드라이버의 경로를 입력합니다. (자세한 정보는 위의 내용을 확인하세요)
+- `mute_video` (default=true) mute video : 만약 true라면 영상이 음소거됩니다. 초기 설정값은 true입니다.
+- `target_webpage` (default='https://safety.kaist.ac.kr/main/main.do') 봇이 대상으로 하는 페이지입니다.
+- `username` (default='YOUR_USERNAME') KAIST 사용자 이름을 입력합니다.
+- `video_id` (default=0) '정기'로 시작하는 영상의 id입니다.
 
 A `config.yaml` file will be saved so that you don't need to re-add these again.
+`config.yaml` 파일이 한번 저장되면 위의 사용자 입력을 다시 입력할 필요가 없습니다.
 You should then see some webpages automatically popping up and doing stuff!
 
 
