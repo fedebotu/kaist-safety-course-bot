@@ -1,5 +1,7 @@
 # KAIST Safety Course Bot
 
+<!--- [![ko](https://img.shields.io/badge/lang-ko-blue.svg)](file path will be here)--->
+
 A bot for automatically completing the KAIST safety course.
 
 > This bot makes viewing the (quite annoying) lab safety videos automatic, so you don't have to click many times on the videos that you need to see to complete the course. Also, considering that as of the time of writing the quiz can't be failed, the bot can additionally complete it too :D
