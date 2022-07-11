@@ -1,5 +1,5 @@
 # KAIST 안전교육 이수 봇
-[![ENG](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/fedebotu/kaist-safety-course-bot/blob/main/README.md)
+English version: [![ENG](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/fedebotu/kaist-safety-course-bot/blob/main/README.md)
 
 KAIST 안전교육을 자동으로 이수하게 해주는 봇입니다.
 
