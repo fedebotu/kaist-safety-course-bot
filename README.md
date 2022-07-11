@@ -1,5 +1,7 @@
 # KAIST Safety Course Bot
 
+한국어판: [![en](https://img.shields.io/badge/lang-kor-blue.svg)](https://github.com/fedebotu/kaist-safety-course-bot/edit/main/README.ko.md)
+
 <!--- [![ko](https://img.shields.io/badge/lang-ko-blue.svg)](file path will be here)--->
 
 A bot for automatically completing the KAIST safety course.
