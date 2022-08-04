@@ -138,24 +138,30 @@ def main_page():
         [RoundedButton('Save Configuration', key='Save'), RoundedButton('Load Saved Configuration', key='Load'), RoundedButton('Load Default Configuration', key='Reload')], 
     ]
 
+    layout_tab3 = [
+        [gui.Text("KAIST Safety Course Bot", font="Calibri 16")],
+        [gui.Column([[gui.Image(data=LOGO_B64, size=(150,150), subsample=(5))]], justification='center')],
+        [gui.Text(ABOUT_TEXT,font=DEFAULT_FONT, size=(60, 6))],
+        [gui.Text(f"Application version: {APP_VERSION}",font=DEFAULT_FONT)],
+        # [gui.Text("Downloaded from: ",font=DEFAULT_FONT)],
+        [RoundedButton("GitHub",font=DEFAULT_FONT)],
+    ]
+
     layout = [[gui.Text('Settings', size=(30, 1), font=("Calibri", 18))],
-                            [gui.TabGroup([[gui.Tab('Personal Details', layout_tab1, title_color='Red',
+                            [gui.TabGroup([[gui.Tab('Main', layout_tab1, title_color='Red',
                                 tooltip='Personal details', background_color=BACKGROUND_COLOR),
-                             gui.Tab('Personal Details', layout_tab2, title_color='Blue',
-                                tooltip='Personal details', background_color=BACKGROUND_COLOR)]], background_color=BACKGROUND_COLOR),],
+                             gui.Tab('Advanced Settings', layout_tab2, title_color='Blue',
+                                tooltip='Personal details', background_color=BACKGROUND_COLOR),
+                             gui.Tab('About', layout_tab3, title_color='Blue',
+                                tooltip='Personal details', background_color=BACKGROUND_COLOR),
+                            ]], background_color=BACKGROUND_COLOR),],
     
         [[gui.Text('Debug window', font=("Calibri", 18))],
         [gui.Multiline("", size=(90, 20), autoscroll=True, reroute_stdout=True, reroute_stderr=True, key='STDOUT', disabled=True)],
         [RoundedButton('Run', tooltip='Run program with current configuration'), RoundedButton('WebDriver', tooltip='Install webdriver for selected browser'), 
         RoundedButton('Debug', tooltip='Save debug'), RoundedButton('Stop', tooltip='Stop current run'), RoundedButton('Help'), RoundedButton('About'), RoundedButton('Exit')],]]
 
-    
-    # tab1_layout =  [[gui.T('This is inside tab 1')]]
 
-    # tab2_layout = [[gui.T('This is inside tab 2')],
-    #             [gui.In(key='in')]]
-    # layout = [[gui.TabGroup([[gui.Tab('Tab 1', tab1_layout), gui.Tab('Tab 2', tab2_layout)]])],
-    #             [gui.RButton('Read')]]
     window = gui.Window('KAIST Safety Course Bot', layout, icon=LOGO_B64)
 
 
