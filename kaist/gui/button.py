@@ -1,10 +1,10 @@
 from PIL import Image, ImageDraw
 from PySimpleGUI import Button, BUTTON_TYPE_READ_FORM, FILE_TYPES_ALL_FILES, theme_background_color, theme_button_color
 import io
+#import ctypes
 from base64 import b64encode
 
-
-def RoundedButton(button_text=' ', corner_radius=0, button_type=BUTTON_TYPE_READ_FORM, target=(None, None),
+def RoundedButton(button_text=' ', corner_radius=0.3, button_type=BUTTON_TYPE_READ_FORM, target=(None, None),
                   tooltip=None, file_types=FILE_TYPES_ALL_FILES, initial_folder=None, default_extension='',
                   disabled=False, change_submits=False, enable_events=False,
                   image_size=(None, None), image_subsample=None, border_width=None, size=(None, None),
@@ -13,7 +13,8 @@ def RoundedButton(button_text=' ', corner_radius=0, button_type=BUTTON_TYPE_READ
                   pad=None, key=None, right_click_menu=None, expand_x=False, expand_y=False, visible=True, 
                   metadata=None):
     if None in size:
-        multi = 5
+        #multi = int(4 * (ctypes.windll.shcore.GetScaleFactorForDevice(0) / 100))
+        multi = 4 # to modify
         size = (((len(button_text) if size[0] is None else size[0]) * 5 + 20) * multi,
                 20 * multi if size[1] is None else size[1])
     if button_color is None:
