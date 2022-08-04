@@ -60,7 +60,7 @@ jobs:
         python -m pip install nuitka pytest zstandard -r requirements.txt
     - name: Make OneFile
       run: |
-        nuitka --assume-yes-for-downloads --show-scons --no-progress --plugin-enable=tk-inter --disable-console --include-package-data=selenium --windows-icon-from-ico=assets/logo.ico --onefile -o kaist-safety-course-bot.exe kaist-safety-course-bot.py
+        nuitka --assume-yes-for-downloads --show-scons --no-progress --plugin-enable=tk-inter --disable-console --include-package-data=selenium --windows-icon-from-ico=assets/logo.ico --onefile -o kaist-safety-course-bot.exe run.py
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
@@ -92,7 +92,7 @@ jobs:
         python -m pip install pytest -r requirements.txt -r requirements-mac.txt -r requirements-dev.txt
     - name: Make OneFile
       run: |
-        pyinstaller --onefile kaist-safety-course-bot.py
+        pyinstaller --onefile run.py
         chmod +x dist/kaist-safety-course-bot
     - name: Tar file
       run: tar -cvf dist/kaist-safety-course-bot.tar dist/kaist-safety-course-bot
@@ -118,13 +118,13 @@ jobs:
 
     - name: Rename file name for release
       run: |
-        mv artifacts/Windows-Binary/kaist-safety-course-bot.exe artifacts/kaist-safety-course-bot.exe
-        mv artifacts/Mac-Binary/kaist-safety-course-bot.tar artifacts/kaist-safety-course-bot.tar
+        mv artifacts/Windows-Binary/kaist-safety-course-bot.exe artifacts/KAIST-Safety-Course-Bot.exe
+        mv artifacts/Mac-Binary/kaist-safety-course-bot.tar artifacts/KAIST-Safety-Course-Bot.tar
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
         draft: true
         body: "Released via Github Actions"
         files: |
-          artifacts/kaist-safety-course-bot.exe
-          artifacts/kaist-safety-course-bot.tar
+          artifacts/KAIST-Safety-Course-Bot.exe
+          artifacts/KAIST-Safety-Course-Bot.tar
