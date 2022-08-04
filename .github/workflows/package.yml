@@ -92,7 +92,7 @@ jobs:
         python -m pip install pytest -r requirements.txt -r requirements-mac.txt -r requirements-dev.txt
     - name: Make OneFile
       run: |
-        pyinstaller --onefile kaist-safety-course-bot.py
+        pyinstaller --onefile run.py
         chmod +x dist/kaist-safety-course-bot
     - name: Tar file
       run: tar -cvf dist/kaist-safety-course-bot.tar dist/kaist-safety-course-bot
