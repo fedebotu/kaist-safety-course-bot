@@ -6,8 +6,10 @@ DEFAULT_CONFIG = {  'username': 'YOUR_USERNAME',
                     'video_id': 0,
                     'mute_video': True,
                     'answer_quiz': True,
+                    'browser': 'chrome',
                     'driver_path': '/usr/bin/chromedriver',
-                    'target_webpage': 'https://safety.kaist.ac.kr/main/main.do'}
+                    'target_webpage': 'https://safety.kaist.ac.kr/main/main.do',
+                    'debug_path': 'debug.html'}
 
 QUIZ_WARNING = "Answer quiz?\nNOTE: this will try to answer the quiz many times iteratively until solved, \
                 we assume to have unlimited retries. Do at your own risk ;D"
