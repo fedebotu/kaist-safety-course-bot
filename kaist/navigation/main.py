@@ -1,21 +1,19 @@
-from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
 import time
 
 from kaist.navigation.video import watch_lessons, page_to_functions
 from kaist.navigation.quiz import run_quiz
 from kaist.navigation.login import portal_login
 from kaist.navigation.utils import save_debug, check_education_end
+from kaist.utils import ThreadWithException
 
 
-def run_main(config):
+def run_main(config, driver):
     """Main program function: take existing config and run"""
 
     # Call the driver and page
-    driver = webdriver.Chrome(service=Service(config['driver_path']))
     driver.get(config['target_webpage'])
 
     try:
@@ -52,12 +50,30 @@ def run_main(config):
                 run_quiz(driver)
         print("Done!")
         
-        
     except Exception as e:
-        print(f'An exception occurred during the program run:\n {e}\nSaving debug.html...')
-        save_debug(driver)
+        print(f"An exception occurred during the program run:\n {e}\nSaving debug to {config['debug_path']}...")
+        save_debug(driver, config['debug_path'])
 
     print('Program finished!\nPress Stop or close browser windows to exit...')
     while True:
         time.sleep(3)
-        
+
+
+# class MainApplication(ThreadWithException):
+#     """
+#     Main application class
+    
+#     Args:
+#         config (dict): configuration dictionary
+#     """
+#     def __init__(self, config):
+#         super(MainApplication, self).__init__(None, None)
+#         self.driver = setup_webdriver(config['browser'])
+#         self.target = run_main
+#         self.args = config, self.driver
+
+    # def main(self):
+    #     """Run the application"""
+    #     thread = ThreadWithException(target=self.run_main)
+    #     thread.start()
+
