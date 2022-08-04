@@ -1,4 +1,6 @@
 selenium
+webdriver-manager
 pyyaml
 pysimplegui
 tk
+darkdetect
