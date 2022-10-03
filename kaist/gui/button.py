@@ -4,17 +4,16 @@ import io
 #import ctypes
 from base64 import b64encode
 
-def RoundedButton(button_text=' ', corner_radius=0.3, button_type=BUTTON_TYPE_READ_FORM, target=(None, None),
+def RoundedButton(button_text=' ', corner_radius=0.5, button_type=BUTTON_TYPE_READ_FORM, target=(None, None),
                   tooltip=None, file_types=FILE_TYPES_ALL_FILES, initial_folder=None, default_extension='',
                   disabled=False, change_submits=False, enable_events=False,
                   image_size=(None, None), image_subsample=None, border_width=None, size=(None, None),
                   auto_size_button=None, button_color=None, disabled_button_color=None, highlight_colors=None, 
                   mouseover_colors=(None, None), use_ttk_buttons=None, font=None, bind_return_key=False, focus=False, 
-                  pad=None, key=None, right_click_menu=None, expand_x=False, expand_y=False, visible=True, 
+                  pad=None, key=None, right_click_menu=None, expand_x=False, expand_y=False, visible=True,  multi=4, # to modify
                   metadata=None):
     if None in size:
         #multi = int(4 * (ctypes.windll.shcore.GetScaleFactorForDevice(0) / 100))
-        multi = 4 # to modify
         size = (((len(button_text) if size[0] is None else size[0]) * 5 + 20) * multi,
                 20 * multi if size[1] is None else size[1])
     if button_color is None:

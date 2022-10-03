@@ -18,7 +18,7 @@ def run_main(config, driver):
 
     try:
         # Login into KAIST
-        portal_login(driver, config['username'])
+        portal_login(driver, config)
 
         # Maximize window and open safety course page
         print('Waiting for the button to be visible... You may need to maximize the window')
@@ -51,7 +51,7 @@ def run_main(config, driver):
         print("Done!")
         
     except Exception as e:
-        print(f"An exception occurred during the program run:\n {e}\nSaving debug to {config['debug_path']}...")
+        print(f"{e}\nException occurred during program run\nReload Driver to restart\nSaving debug to {config['debug_path']}...")
         save_debug(driver, config['debug_path'])
 
     print('Program finished!\nPress Stop or close browser windows to exit...')
