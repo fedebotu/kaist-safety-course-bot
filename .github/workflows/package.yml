@@ -93,9 +93,9 @@ jobs:
     - name: Make OneFile
       run: |
         pyinstaller --onefile run.py
-        chmod +x dist/kaist-safety-course-bot
+        chmod +x dist/run
     - name: Tar file
-      run: tar -cvf dist/kaist-safety-course-bot.tar dist/kaist-safety-course-bot
+      run: tar -cvf dist/kaist-safety-course-bot.tar dist/run
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
