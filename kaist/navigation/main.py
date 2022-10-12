@@ -3,20 +3,18 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
 
-from kaist.navigation.video import watch_lessons, page_to_functions
-from kaist.navigation.quiz import run_quiz
+from kaist.navigation.video import watch_videos
 from kaist.navigation.login import portal_login
-from kaist.navigation.utils import save_debug, check_education_end
-from kaist.utils import ThreadWithException
+from kaist.navigation.utils import save_debug, alert_accept, click_all_until_done
 
 
 def run_main(config, driver):
     """Main program function: take existing config and run"""
 
-    # Call the driver and page
-    driver.get(config['target_webpage'])
-
     try:
+        # Call the driver and page
+        driver.get(config['target_webpage'])
+
         # Login into KAIST
         portal_login(driver, config)
 
@@ -30,50 +28,32 @@ def run_main(config, driver):
         # Close popup
         windows = driver.window_handles
         driver.switch_to.window(windows[1]) # switch to popup window
-        WebDriverWait(driver, timeout=60, poll_frequency=1).until(EC.element_to_be_clickable((By.ID, 'main_popup_0_close')))
-        button = driver.find_element(by='id', value='main_popup_0_close') # click button to go to page
+        alert_accept(driver, timeout=10)
+
+        # Close all popups
+        click_all_until_done(driver, by=By.XPATH, value="//*[contains(text(), '닫기')]")
+
+        # Open My Page and close all possible alerts
+        print("Opening My Page...")
+        button = driver.find_element(by=By.XPATH, value="//*[contains(text(), '마이페이지')]")
         button.click()
-        driver.switch_to.window(windows[0]) # switch back after closing
+        alert_accept(driver, timeout=5)
 
-        # Driver call
-        driver.switch_to.window(driver.window_handles[1]) # switch to other window
-        js = f"fn_movePage('{page_to_functions['마이페이지']}')"
-        driver.execute_script(js)
-
-        if not check_education_end(driver, config['video_id']):
-            # Watch lessons
-            print(f"Starting to watch video number {config['video_id']}...")
-            watch_lessons(driver, config['video_id'], config['mute_video'])
-            # Automated quiz
-            if config['answer_quiz']:
-                print(f"Answering quiz automatically...")
-                run_quiz(driver)
+        # Watch videos sequentially
+        print("Select video lessons to watch and open the video stream of one. I will watch the rest for you! Waiting for video...")
+        watch_videos(driver, config)
+        
         print("Done!")
         
     except Exception as e:
-        print(f"{e}\nException occurred during program run\nReload Driver to restart\nSaving debug to {config['debug_path']}...")
+        print(f"{e}\nException occurred during program run\nSaving debug to {config['debug_path']}...")
         save_debug(driver, config['debug_path'])
+        print("==============\nOuch, an error occurred! =(\nReload Driver to restart!\n==============")
 
-    print('Program finished!\nPress Stop or close browser windows to exit...')
-    while True:
-        time.sleep(3)
+    finally:
+        print("Program finished!")
+        # print('Program finished!\nPress Stop or close browser windows to exit...')
+        # while True:
+        #     time.sleep(3)
 
-
-# class MainApplication(ThreadWithException):
-#     """
-#     Main application class
-    
-#     Args:
-#         config (dict): configuration dictionary
-#     """
-#     def __init__(self, config):
-#         super(MainApplication, self).__init__(None, None)
-#         self.driver = setup_webdriver(config['browser'])
-#         self.target = run_main
-#         self.args = config, self.driver
-
-    # def main(self):
-    #     """Run the application"""
-    #     thread = ThreadWithException(target=self.run_main)
-    #     thread.start()
 
