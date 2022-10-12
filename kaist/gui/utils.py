@@ -1,7 +1,7 @@
 from kaist.config import DEFAULT_CONFIG
 
 
-def get_config_from_values(values):
+def get_config_from_values(values, verbose=False):
     """Config from PySimpleGUI values"""
     config = DEFAULT_CONFIG.copy()
     for key in config.keys():
@@ -15,7 +15,8 @@ def get_config_from_values(values):
                 value = int(value)
             config[key] = value
         except Exception as e:
-            print("Could not get config from values:", e)
+            if verbose:
+                print("Could not get config from values:", e)
             continue
     return config
 
