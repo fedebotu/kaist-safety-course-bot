@@ -39,3 +39,19 @@ def save_debug(driver, filename='debug.html'):
     """Save debug page"""
     with open(filename, 'w') as f:
         f.write(driver.page_source)
+
+
+def click_all_until_done(driver, by, value):
+    """Iterates over all elements containing a certain value and clicks them until all are done recursively"""
+    # alert_accept(driver) # just in case
+    els = driver.find_elements(by=by, value=value)
+    if len(els) > 0:
+        for el in els:
+            try:
+                el.click()
+                break
+            except:
+                pass
+        click_all_until_done(driver, by, value)
+    else: 
+        return

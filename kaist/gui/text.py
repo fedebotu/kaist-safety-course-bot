@@ -1,0 +1,10 @@
+DEFAULT_THEME = 'Reddit'
+DEFAULT_FONT = 'Calibri 12'
+MAX_WIDTH = 70
+APP_VERSION = "1.0.0 alpha"
+GITHUB_PAGE = "https://github.com/fedebotu/kaist-safety-course-bot"
+ABOUT_TEXT = 'This bot makes viewing the (quite annoying) lab safety videos automatic, so you don`t have to click many times on the videos that you need to see to complete the course. Also, considering that as of the time of writing the quiz can not be failed, the bot can additionally complete it too :D.'
+HELP_TEXT_CHROMEDRIVER = "We will be using Chrome, so the Chromedriver needs to be downloaded and loaded from the interface. Make sure your Chrome version corresponds to the Chromedriver's one!"
+HELP_TEXT_VIRUS = "Windows may flag the program as a virus since it contains browser automation. But hey, guess what, it isn`t :) Try to temporarily deactivate or make an exception in Windows Defender."
+HELP_TEXT_OTHER = "Did you encounter another bug? Try visiting the Github page or contact us!"
+QUICK_START = "Quick start:\n1) Select your browser and load its driver, you should see a page opening\n2) Click on Run\n3) Login into KAIST with your favorite authentication method\n4) When the bot reaches `마이페이지`/My Page, you need to add if you didn`t and open a video lecture. The bot will watch all the lectures for you!"
