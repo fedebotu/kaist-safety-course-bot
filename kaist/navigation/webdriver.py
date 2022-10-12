@@ -12,6 +12,9 @@ from webdriver_manager.opera import OperaDriverManager
 from webdriver_manager.core.utils import ChromeType
 
 
+AVAILABLE_BROWSERS = ['Chrome', 'Chromium', 'Brave', 'Firefox', 'IE', 'Edge', 'Opera']
+
+
 def setup_webdriver(browser):
     if browser.lower() == 'chrome':
         driver = Chrome(service=ChromeService(ChromeDriverManager().install()))
