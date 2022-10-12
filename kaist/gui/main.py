@@ -60,7 +60,7 @@ def main_page():
         [gui.CBox('Mute videos', key='mute_video', background_color=BACKGROUND_COLOR, default=True, tooltip="Set the volume to 0 while watching the videos")],
         [gui.Text('Playback speed', font=DEFAULT_FONT)],
         [gui.Text('1 = normal speed. More than 10 may cause issues!')],
-        [gui.Slider(range=(1, 20), default_value=config['playback_speed'], orientation='h', size=(MAX_WIDTH//4, 10), key='playback_speed', tooltip='Set the playback speed of the videos (1 = normal speed). More than 10 may cause issues!')],
+        [gui.Slider(range=(1, 20), default_value=config['playback_rate'], orientation='h', size=(MAX_WIDTH//4, 10), key='playback_rate', tooltip='Set the playback speed of the videos (1 = normal speed). More than 10 may cause issues!')],
     ]
 
     layout_tab2 = [
