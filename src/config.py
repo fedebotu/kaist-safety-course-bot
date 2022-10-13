@@ -1,5 +1,5 @@
 import yaml
-from kaist.utils import input_with_default
+from src.utils import input_with_default
 
 
 DEFAULT_CONFIG = {  'username': 'duckduckgoose',

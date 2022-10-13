@@ -11,7 +11,7 @@ https://github.com/fedebotu/kaist-safety-course-bot
 
 """
 
-from kaist.gui.main import main_page
+from src.gui.main import main_page
 
 
 # Run the main GUI app

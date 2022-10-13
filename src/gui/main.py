@@ -2,15 +2,15 @@ import PySimpleGUI as gui
 import webbrowser
 import darkdetect
 
-from kaist.config import DEFAULT_CONFIG
-from kaist.config import load_config, dump_config
-from kaist.navigation.main import run_main
-from kaist.navigation.utils import save_debug
-from kaist.navigation.webdriver import setup_webdriver, AVAILABLE_BROWSERS
-from kaist.gui.images import LOGO_B64
-from kaist.gui.text import *
-from kaist.gui.utils import get_config_from_values, load_config_to_window
-from kaist.utils import ThreadWithException
+from src.config import DEFAULT_CONFIG
+from src.config import load_config, dump_config
+from src.navigation.main import run_main
+from src.navigation.utils import save_debug
+from src.navigation.webdriver import setup_webdriver, AVAILABLE_BROWSERS
+from src.gui.images import LOGO_B64
+from src.gui.text import *
+from src.gui.utils import get_config_from_values, load_config_to_window
+from src.utils import ThreadWithException
 
 
 def set_theme(dark=False):

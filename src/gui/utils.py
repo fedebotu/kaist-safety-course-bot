@@ -1,4 +1,4 @@
-from kaist.config import DEFAULT_CONFIG
+from src.config import DEFAULT_CONFIG
 
 
 def get_config_from_values(values, verbose=False):

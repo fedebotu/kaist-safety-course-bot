@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-from kaist.navigation.utils import alert_accept, save_debug
+from src.navigation.utils import alert_accept, save_debug
 
 
 def watch_videos(driver, config):               

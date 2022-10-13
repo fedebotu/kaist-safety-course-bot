@@ -3,9 +3,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 import time
 
-from kaist.navigation.video import watch_videos
-from kaist.navigation.login import portal_login
-from kaist.navigation.utils import save_debug, alert_accept, click_all_until_done
+from src.navigation.video import watch_videos
+from src.navigation.login import portal_login
+from src.navigation.utils import save_debug, alert_accept, click_all_until_done
 
 
 def run_main(config, driver):
