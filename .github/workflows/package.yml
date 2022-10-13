@@ -41,7 +41,7 @@ jobs:
         python -m pip install nuitka pytest zstandard -r requirements.txt
     - name: Make OneFile
       run: |
-        nuitka --assume-yes-for-downloads --show-scons --no-progress --plugin-enable=tk-inter --include-package-data=selenium --windows-icon-from-ico=assets/logo.ico --onefile -o kaist-safety-course-bot.exe run.py
+        nuitka --assume-yes-for-downloads --show-scons --disable-console --no-progress --plugin-enable=tk-inter --include-package-data=selenium --windows-icon-from-ico=assets/logo.ico --onefile -o kaist-safety-course-bot.exe run.py
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
