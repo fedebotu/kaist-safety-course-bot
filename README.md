@@ -6,7 +6,7 @@
 <p align="center">
 
 ## Download
-[![Latest release](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/fedebotu/kaist-safety-course-bot/releases) [![Latest release](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/fedebotu/kaist-safety-course-bot/releases)
+[![Latest release](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/fedebotu/kaist-safety-course-bot/releases/download/v1.0.0alpha/Windows-Binary.zip) [![Latest release](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/fedebotu/kaist-safety-course-bot/releases/download/v1.0.0alpha/Mac-Binary.zip)
 
 
 </p>
