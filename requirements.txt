@@ -5,3 +5,7 @@ selenium==4.5.0
 webdriver-manager==3.8.3
 python-dotenv==0.21.0
 pyyaml
+
+# For webdriver-manager
+tqdm
+packaging
