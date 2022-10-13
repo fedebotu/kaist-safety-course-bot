@@ -1,19 +1,16 @@
 # KAIST Safety Course Bot
 
-
-<p align="center">
-
-
-[![Latest release](https://badgen.net/github/release/Naereen/Strapdown.js)](https://github.com/fedebotu/kaist-safety-course-bot/releases)
-
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
 
+<p align="center">
+
+## Download
+[![Latest release](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/fedebotu/kaist-safety-course-bot/releases) [![Latest release](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/fedebotu/kaist-safety-course-bot/releases)
+
+
 </p>
 
-한국어판: [![en](https://img.shields.io/badge/lang-kor-blue.svg)](https://github.com/fedebotu/kaist-safety-course-bot/edit/main/README.ko.md)
-
-<!--- [![ko](https://img.shields.io/badge/lang-ko-blue.svg)](file path will be here)--->
 
 A bot for automatically completing the KAIST safety course.
 
@@ -21,6 +18,10 @@ A bot for automatically completing the KAIST safety course.
 
 **NOTICE (2022/10/13)**
 > Due to changes in KAIST's website, the bot was upgrade and can now deal with the video viewing in the new website, while the quiz is still in the works
+한국어판: [![en](https://img.shields.io/badge/lang-kor-blue.svg)](https://github.com/fedebotu/kaist-safety-course-bot/edit/main/README.ko.md)
+
+
+<!--- [![ko](https://img.shields.io/badge/lang-ko-blue.svg)](file path will be here)--->
 
 ## App Screenshot
 
