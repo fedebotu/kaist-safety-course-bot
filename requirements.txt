@@ -2,10 +2,10 @@ PySimpleGUI==4.60.3
 darkdetect==0.7.1
 requests==2.28.1
 selenium==4.5.0
-webdriver-manager==3.8.3
 python-dotenv==0.21.0
 pyyaml
 
 # For webdriver-manager
 tqdm
 packaging
+#webdriver-manager==3.8.3 # we use our custom version!
