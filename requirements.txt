@@ -3,5 +3,5 @@ darkdetect==0.7.1
 requests==2.28.1
 selenium==4.5.0
 webdriver-manager==3.8.3
+python-dotenv==0.21.0
 pyyaml
-tk
