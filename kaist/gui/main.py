@@ -7,8 +7,7 @@ from kaist.config import load_config, dump_config
 from kaist.navigation.main import run_main
 from kaist.navigation.utils import save_debug
 from kaist.navigation.webdriver import setup_webdriver, AVAILABLE_BROWSERS
-from kaist.gui.images import LOGO_B64, BLUE_DOTS_B64
-from kaist.gui.button import RoundedButton
+from kaist.gui.images import LOGO_B64
 from kaist.gui.text import *
 from kaist.gui.utils import get_config_from_values, load_config_to_window
 from kaist.utils import ThreadWithException
@@ -51,7 +50,7 @@ def main_page():
         [gui.Text('Main Settings', font='Calibri 14')],
         [gui.Text(QUICK_START, size=(MAX_WIDTH, 6))],
         [gui.Text('Browser', font=DEFAULT_FONT)],
-        [gui.Combo(AVAILABLE_BROWSERS, default_value=config.get('browser', 'Chrome'), key='browser', readonly=True),  RoundedButton('Load Browser Driver', tooltip='Install webdriver for selected browser')],
+        [gui.Combo(AVAILABLE_BROWSERS, default_value=config.get('browser', 'Chrome'), key='browser', readonly=True),  gui.Button('Load Browser Driver', tooltip='Install webdriver for selected browser')],
         # [gui.Text('Video ID', font=DEFAULT_FONT)],
         # [gui.Spin([x for x in range(0, 10, 1)], initial_value=config['video_id'], key='video_id', tooltip='The video number (starting from 0) you want to watch\nThese videos are marked with `정기`'), gui.Text('The video number (starting from 0) you want to watch\nThese videos are marked with `정기`')],
         # [gui.Text('Answer Quiz', font=DEFAULT_FONT)],
@@ -76,7 +75,7 @@ def main_page():
         [gui.Text('Target webpage')],
         [gui.InputText(config['target_webpage'], key='target_webpage', tooltip='Change only if you cannot access the default URL')],
         [gui.Text('Configuration Management')],
-        [RoundedButton('Save', key='Save'), RoundedButton('Load', key='Load'), RoundedButton('Load Default', key='Reload')], 
+        [gui.Button('Save', key='Save'), gui.Button('Load', key='Load'), gui.Button('Load Default', key='Reload')], 
     ]
 
     layout_tab3 = [
@@ -84,7 +83,7 @@ def main_page():
         [gui.Column([[gui.Image(data=LOGO_B64, size=(150,150), subsample=(5))]], justification='center')],
         [gui.Text(ABOUT_TEXT, size=(MAX_WIDTH, 6))],
         [gui.Text(f"Application version: {APP_VERSION}",font=DEFAULT_FONT)],
-        [RoundedButton("Github")],
+        [gui.Button("Github")],
     ]
 
     layout_tab4 = [[gui.Text('Chromedriver Installation', font='Calibri 16')],
@@ -93,8 +92,8 @@ def main_page():
         [gui.Text(HELP_TEXT_VIRUS, size=(MAX_WIDTH, 4), enable_events=True)],
         [gui.Text('Other Bugs',font='Calibri 16')],
         [gui.Text(HELP_TEXT_OTHER, size=(MAX_WIDTH, 4), enable_events=True)],
-        [RoundedButton("Help on Github"), 
-        RoundedButton("Safety Course Website")]
+        [gui.Button("Help on Github"), 
+        gui.Button("Safety Course Website")]
         ]
 
     layout = [[gui.TabGroup([[gui.Tab('Main', layout_tab1, title_color='Blue',
@@ -109,8 +108,8 @@ def main_page():
     
             [[gui.Text('Debug window', font=("Calibri", 18))],
             [gui.Multiline("", size=(MAX_WIDTH, 20), autoscroll=True, reroute_stdout=True, reroute_stderr=True, key='STDOUT', disabled=True)],
-            [RoundedButton('Run', tooltip='Run program with current configuration'), 
-             RoundedButton('Debug', tooltip='Save debug'), RoundedButton('Stop', tooltip='Stop current run'), RoundedButton('Exit')],]]
+            [gui.Button('Run', tooltip='Run program with current configuration'), 
+             gui.Button('Debug', tooltip='Save debug'), gui.Button('Stop', tooltip='Stop current run'), gui.Button('Exit')],]]
 
 
     window = gui.Window('KAIST Safety Course Bot', layout, icon=LOGO_B64)
