@@ -45,7 +45,7 @@ pip install -r requirements.txt
 then, run
 
 ```shell
-python run.py
+python kaist-safety-course-bot.py
 ```
 
 ## Important Note
