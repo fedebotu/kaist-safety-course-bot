@@ -52,6 +52,7 @@ def click_all_until_done(driver, by, value):
                 break
             except:
                 pass
-        click_all_until_done(driver, by, value)
+        # TODO: should there be a recursion? this seems not to work
+        # click_all_until_done(driver, by, value)
     else: 
         return

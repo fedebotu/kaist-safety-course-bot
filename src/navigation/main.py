@@ -18,14 +18,20 @@ def run_main(config, driver):
         # Login into KAIST
         portal_login(driver, config)
 
+
         # Maximize window and open safety course page
         print('Waiting for the button to be visible... You may need to maximize the window')
         driver.maximize_window()
+
+        # Close popups. Maybe overkill, but it works
+        click_all_until_done(driver, by=By.XPATH, value="//*[contains(text(), '닫기')]")
+        WebDriverWait(driver, timeout=60, poll_frequency=1).until(EC.element_to_be_clickable((By.ID, 'eduGo')))
+        click_all_until_done(driver, by=By.XPATH, value="//*[contains(text(), '닫기')]")
         WebDriverWait(driver, timeout=60, poll_frequency=1).until(EC.element_to_be_clickable((By.ID, 'eduGo')))
         button = driver.find_element(by='id', value='eduGo') # click button to go to page
         button.click()
 
-        # Close popup
+        # Switch to popup window
         windows = driver.window_handles
         driver.switch_to.window(windows[1]) # switch to popup window
         alert_accept(driver, timeout=10)
