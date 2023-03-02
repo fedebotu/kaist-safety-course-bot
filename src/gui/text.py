@@ -1,7 +1,7 @@
 DEFAULT_THEME = 'Reddit'
 DEFAULT_FONT = 'Calibri 12'
 MAX_WIDTH = 70
-APP_VERSION = "1.0.0 alpha"
+APP_VERSION = "1.0.1"
 GITHUB_PAGE = "https://github.com/fedebotu/kaist-safety-course-bot"
 ABOUT_TEXT = 'This bot makes viewing the (quite annoying) lab safety videos automatic, so you don`t have to click many times on the videos that you need to see to complete the course. Also, considering that as of the time of writing the quiz can not be failed, the bot can additionally complete it too :D.'
 HELP_TEXT_CHROMEDRIVER = "We will be using Chrome, so the Chromedriver needs to be downloaded and loaded from the interface. Make sure your Chrome version corresponds to the Chromedriver's one!"
