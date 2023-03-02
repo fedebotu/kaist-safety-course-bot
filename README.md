@@ -59,6 +59,7 @@ PS: I'm not responsible for inappropriate use of this software of course ;) Feel
 - No quiz for the moment, still in the works ;)
 
 ## Changelog
+- [v1.0.1](https://github.com/fedebotu/kaist-safety-course-bot/releases/tag/v1.0.1): Bug fixes: fix bug with infinite recursion and popups
 - [v1.0.0alpha](https://github.com/fedebotu/kaist-safety-course-bot/releases/tag/v1.0.0alpha)
   - Updated for the new website
   - Big GUI overhaul!
