@@ -1,16 +1,16 @@
+<div align="center">
+
 # KAIST Safety Course Bot
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+[![Latest release](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/fedebotu/kaist-safety-course-bot/releases/download/v1.0.1/windows-kaist-safety-course-bot.zip) [![Latest release](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/fedebotu/kaist-safety-course-bot/releases/download/v1.0.1/mac-kaist-safety-course-bot.zip)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
 
-<p align="center">
-
-## Download
-[![Latest release](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/fedebotu/kaist-safety-course-bot/releases/download/v1.0.0alpha/Windows-Binary.zip) [![Latest release](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/fedebotu/kaist-safety-course-bot/releases/download/v1.0.0alpha/Mac-Binary.zip)
 
 
-</p>
 
+
+
+</div>
 
 A bot for automatically completing the KAIST safety course.
 
