@@ -1,12 +1,12 @@
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 
 def str2bool(value):
     return value.lower() in ['true', '1']
 
 
-# load_dotenv()
+load_dotenv()
 
 
 def ssl_verify():
