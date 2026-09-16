@@ -106,6 +106,17 @@ def retry_quiz(driver, questions_answers):
     return
 
 
+def check_quiz_complete(driver):
+    """Check if the quiz is over by looking for the completion keyword on the page"""
+    try:
+        wait = WebDriverWait(driver, timeout=5, poll_frequency=1)
+        wait.until(EC.presence_of_element_located((By.XPATH, "//*[ contains (text(), '완료')]")))
+        print("Quiz is complete! :D")
+        return True
+    except Exception:
+        return False
+
+
 def run_quiz(driver):
     """
     Run the quiz iteratively
@@ -115,10 +126,9 @@ def run_quiz(driver):
     except: pass
     questions_answers = first_run_quiz(driver)
     click_accept(driver)
-    quiz_is_complete = False
 
     try:
-        while not quiz_is_complete:
+        while not check_quiz_complete(driver):
             # Adjust answers based on the first quiz
             questions_answers = adjust_answers(driver, questions_answers)
             click_retry(driver)
